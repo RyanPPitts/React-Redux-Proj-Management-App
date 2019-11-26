@@ -1,3 +1,5 @@
+Building Project Management App using React, Redux and Firebase DB.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
