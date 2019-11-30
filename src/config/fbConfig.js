@@ -1,3 +1,5 @@
+// creating config file for our firebase/firestore setup
+
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
