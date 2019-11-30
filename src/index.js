@@ -15,12 +15,12 @@ const store = createStore(
   rootReducer,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
-    // store enchancers below next 2 lines
-    // passing the config file into the store enhancers
     reduxFirestore(fbConfig),
     reactReduxFirebase(fbConfig)
   )
 );
+// store enchancers below next 2 lines
+// passing the config file into the store enhancers
 
 ReactDOM.render(
   <Provider store={store}>
