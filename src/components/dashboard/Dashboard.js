@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import Notifications from "./Notifications";
 import ProjectList from "../projects/ProjectList";
+import { connect } from 'react-redux'
+// connect is a higher level component that connects react with redux
 
 export class Dashboard extends Component {
   render() {
+    console.log(this.props)
     return (
       <div className="dashboard container">
         <div className="row">
@@ -19,5 +22,11 @@ export class Dashboard extends Component {
     );
   }
 }
+  
+const mapStateToProps = (state) => {
+  return {
+    projects: state.project.projects
+  }
+}
 
-export default Dashboard;
+export default connect(mapStateToProps)(Dashboard);
