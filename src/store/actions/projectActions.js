@@ -11,15 +11,15 @@ export const createProject = project => {
       .collection("projects")
       .add({
         ...project,
-        authorFirstName: "Net",
-        authorLastName: "Ninja",
-        authorID: 12345,
+        authorFirstName: "Ryan",
+        authorLastName: "Pitts",
+        authorID: 123,
         createdAt: new Date()
       })
       .then(() => {
         dispatch({ type: "CREATE_PROJECT", project });
       })
-      .catch(err => {
+      .catch((err) => {
         dispatch({ type: "CREATE_PROJECT_ERROR", err });
       });
     //   make async call to database
