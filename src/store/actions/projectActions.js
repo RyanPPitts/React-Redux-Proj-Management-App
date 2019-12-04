@@ -1,5 +1,4 @@
 // import { EmailAuthProvider_Instance } from "@firebase/auth-types";
-
 // any type of actions related to projects - delete, add, update,etc
 
 export const createProject = project => {
@@ -19,7 +18,7 @@ export const createProject = project => {
       .then(() => {
         dispatch({ type: "CREATE_PROJECT", project });
       })
-      .catch((err) => {
+      .catch(err => {
         dispatch({ type: "CREATE_PROJECT_ERROR", err });
       });
     //   make async call to database

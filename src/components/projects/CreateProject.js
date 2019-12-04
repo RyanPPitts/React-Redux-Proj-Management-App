@@ -20,7 +20,7 @@ class CreateProject extends Component {
     // console.log(e);
     e.preventDefault();
     this.props.createProject(this.state);
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   render() {
