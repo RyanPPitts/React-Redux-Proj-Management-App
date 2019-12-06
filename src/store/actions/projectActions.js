@@ -1,6 +1,3 @@
-// import { EmailAuthProvider_Instance } from "@firebase/auth-types";
-// any type of actions related to projects - delete, add, update,etc
-
 export const createProject = project => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();

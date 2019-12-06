@@ -1,9 +1,10 @@
-export const signIn = credentials => {
+export const signIn = credentails => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
+
     firebase
       .auth()
-      .signInWithEmailAndPassword(credentials.email, credentials.password)
+      .signInWithEmailAndPassword(credentails.email, credentails.password)
       .then(() => {
         dispatch({ type: "LOGIN_SUCCESS" });
       })
@@ -16,6 +17,7 @@ export const signIn = credentials => {
 export const signOut = () => {
   return (dispatch, getState, { getFirebase }) => {
     const firebase = getFirebase();
+
     firebase
       .auth()
       .signOut()
@@ -39,11 +41,11 @@ export const signUp = newUser => {
           .doc(response.user.uid)
           .set({
             firstName: newUser.firstName,
-            lastNAme: newUser.lastName,
+            lastName: newUser.lastName,
             initials: newUser.firstName[0] + newUser.lastName[0]
           });
       })
-      .then(() => {
+      .then(response => {
         dispatch({ type: "SIGNUP_SUCCESS" });
       })
       .catch(err => {
