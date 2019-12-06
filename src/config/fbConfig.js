@@ -1,11 +1,8 @@
-// creating config file for our firebase/firestore
-
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-import "firebase/database";
 
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyDZvlf34Jlf1LJkDZ5Gz9OoJxNlzJieCK8",
   authDomain: "netninja-42ccd.firebaseapp.com",
   databaseURL: "https://netninja-42ccd.firebaseio.com",
@@ -16,9 +13,9 @@ const firebaseConfig = {
   measurementId: "G-CP09FJTM6R"
 };
 
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
-firebase.firestore();
+firebase.initializeApp(config);
+firebase.firestore().settings({
+  timestampsInSnapshots: true
+});
 
 export default firebase;
